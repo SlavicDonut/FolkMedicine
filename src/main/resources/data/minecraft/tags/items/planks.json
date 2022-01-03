@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "folkmedicine:linden_planks",
+    "folkmedicine:juniper_planks",
+    "folkmedicine:sandalwood_planks"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "folkmedicine:block/linden_sapling"
+  }
+}

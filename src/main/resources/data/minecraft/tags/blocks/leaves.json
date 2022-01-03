@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "folkmedicine:linden_leaves",
+    "folkmedicine:juniper_leaves",
+    "folkmedicine:sandalwood_leaves"
+  ]
+}
