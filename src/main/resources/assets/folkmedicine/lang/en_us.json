@@ -19,4 +19,11 @@
   "block.folkmedicine.linden_sapling": "Linden Sapling",
   "block.folkmedicine.stripped_linden_log": "Stripped Linden Log",
   "block.folkmedicine.linden_leaves": "Linden Leaves",
+  "item.folkmedicine.chamomile_seeds": "Chamomile seeds",
+  "item.folkmedicine.nettle_seeds": "Nettle seeds",
+  "item.folkmedicine.ribleaf_seeds": "Ribleaf seeds",
+  "item.folkmedicine.sage_seeds": "Sage seeds",
+  "item.folkmedicine.yarrow_seeds": "Yarrow seeds",
+
+
   "itemGroup.folkmedicine": "Folk Medicine"}

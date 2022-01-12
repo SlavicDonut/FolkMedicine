@@ -13,14 +13,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 @Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
 public class ModItems {
 
-    //herbs
-    public static BlockItem chamomile = new BlockItem(ModBlocks.CHAMOMILE, new Item.Properties().tab(FolkMedicine.FOLK_MEDICINE));
-    public static BlockItem nettle = new BlockItem(ModBlocks.NETTLE, new Item.Properties().tab(FolkMedicine.FOLK_MEDICINE));
-    public static BlockItem ribleaf = new BlockItem(ModBlocks.RIBLEAF, new Item.Properties().tab(FolkMedicine.FOLK_MEDICINE));
-    public static BlockItem sage = new BlockItem(ModBlocks.SAGE, new Item.Properties().tab(FolkMedicine.FOLK_MEDICINE));
-    public static BlockItem yarrow = new BlockItem(ModBlocks.YARROW, new Item.Properties().tab(FolkMedicine.FOLK_MEDICINE));
-    public static BlockItem sweetflag = new BlockItem(ModBlocks.SWEET_FLAG, new Item.Properties().tab(FolkMedicine.FOLK_MEDICINE));
-
     //trees' stuff
     public static BlockItem linden_sapling = new BlockItem(ModBlocks.LINDEN_SAPLING, new Item.Properties().tab(FolkMedicine.FOLK_MEDICINE));
     public static BlockItem juniper_sapling = new BlockItem(ModBlocks.JUNIPER_SAPLING, new Item.Properties().tab(FolkMedicine.FOLK_MEDICINE));
@@ -54,28 +46,17 @@ public class ModItems {
     public static Item juniper_berries = new Item(new Item.Properties().tab(FolkMedicine.FOLK_MEDICINE));
     public static Item sandalwood_resin = new Item(new Item.Properties().tab(FolkMedicine.FOLK_MEDICINE));
 
-
     //seeds
-    public static Item nettle_seeds = new BlockNamedItem(ModBlocks.CHAMOMILE, new Item.Properties().tab(FolkMedicine.FOLK_MEDICINE));
     public static Item chamomile_seeds = new BlockNamedItem(ModBlocks.CHAMOMILE, new Item.Properties().tab(FolkMedicine.FOLK_MEDICINE));
-    public static Item ribleaf_seeds = new BlockNamedItem(ModBlocks.CHAMOMILE, new Item.Properties().tab(FolkMedicine.FOLK_MEDICINE));
-    public static Item sage_seeds = new BlockNamedItem(ModBlocks.CHAMOMILE, new Item.Properties().tab(FolkMedicine.FOLK_MEDICINE));
-    public static Item yarrow_seeds = new BlockNamedItem(ModBlocks.CHAMOMILE, new Item.Properties().tab(FolkMedicine.FOLK_MEDICINE));
-    public static Item sweetflag_seeds = new BlockNamedItem(ModBlocks.CHAMOMILE, new Item.Properties().tab(FolkMedicine.FOLK_MEDICINE));
+    public static Item nettle_seeds = new BlockNamedItem(ModBlocks.NETTLE, new Item.Properties().tab(FolkMedicine.FOLK_MEDICINE));
+    public static Item ribleaf_seeds = new BlockNamedItem(ModBlocks.RIBLEAF, new Item.Properties().tab(FolkMedicine.FOLK_MEDICINE));
+    public static Item sage_seeds = new BlockNamedItem(ModBlocks.SAGE, new Item.Properties().tab(FolkMedicine.FOLK_MEDICINE));
+    public static Item yarrow_seeds = new BlockNamedItem(ModBlocks.YARROW, new Item.Properties().tab(FolkMedicine.FOLK_MEDICINE));
+    public static Item sweetflag_seeds = new BlockNamedItem(ModBlocks.SWEET_FLAG, new Item.Properties().tab(FolkMedicine.FOLK_MEDICINE));
 
 
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
-
-        //blockitems
-
-        //herbs
-        registerItemBlock(chamomile, "chamomile");
-        registerItemBlock(nettle, "nettle");
-        registerItemBlock(ribleaf, "ribleaf");
-        registerItemBlock(sage, "sage");
-        registerItemBlock(yarrow, "yarrow");
-        registerItemBlock(sweetflag, "sweetflag");
 
         //trees' stuff
         registerItemBlock(linden_sapling, "linden_sapling");
@@ -98,13 +79,26 @@ public class ModItems {
         registerItemBlock(juniper_planks, "juniper_planks");
         registerItemBlock(sandalwood_planks, "sandalwood_planks");
 
-        //items
-
         //ingredients
         registerItem(chamomile_petals,"chamomile_petals");
+        registerItem(nettle_leaves,"nettle_leaves");
+        registerItem(ribleaf_leaves,"ribleaf_leaves");
+        registerItem(sage_leaves,"sage_leaves");
+        registerItem(yarrow_petals,"yarrow_petals");
+        registerItem(sweetflag_rhizomes,"sweetflag_rhizomes");
+
+        registerItem(linden_petals,"linden_petals");
+        registerItem(juniper_berries,"juniper_berries");
+        registerItem(sandalwood_resin,"sandalwood_resin");
 
         //seeds
         registerItem(chamomile_seeds, "chamomile_seeds");
+        registerItem(nettle_seeds, "nettle_seeds");
+        registerItem(ribleaf_seeds, "ribleaf_seeds");
+        registerItem(sage_seeds, "sage_seeds");
+        registerItem(yarrow_seeds, "yarrow_seeds");
+        registerItem(sweetflag_seeds, "sweetflag_seeds");
+
 
 
     }
