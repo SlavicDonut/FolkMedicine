@@ -3,6 +3,7 @@ package donut.folkmedicine.common.block;
 import donut.folkmedicine.common.block.tree.JuniperTree;
 import donut.folkmedicine.common.block.tree.LindenTree;
 import donut.folkmedicine.common.block.tree.SandalwoodTree;
+import donut.folkmedicine.common.item.ModItems;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
@@ -22,11 +23,11 @@ import net.minecraftforge.registries.ForgeRegistries;
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModBlocks {
     //herbs
-    public static Block CHAMOMILE = new HerbBlock(Block.Properties.of(Material.PLANT).noCollission().sound(SoundType.GRASS));
-    public static Block NETTLE = new HerbBlock(Block.Properties.of(Material.PLANT).noCollission().sound(SoundType.GRASS));
-    public static Block RIBLEAF = new HerbBlock(Block.Properties.of(Material.PLANT).noCollission().sound(SoundType.GRASS));
-    public static Block SAGE = new HerbBlock(Block.Properties.of(Material.PLANT).noCollission().sound(SoundType.GRASS));
-    public static Block YARROW = new HerbBlock(Block.Properties.of(Material.PLANT).noCollission().sound(SoundType.GRASS));
+    public static Block CHAMOMILE = new HerbBlock(Block.Properties.of(Material.PLANT).noCollission().sound(SoundType.GRASS), () -> ModItems.chamomile_petals);
+    public static Block NETTLE = new BushBlock(Block.Properties.of(Material.PLANT).noCollission().sound(SoundType.GRASS));
+    public static Block RIBLEAF = new BushBlock(Block.Properties.of(Material.PLANT).noCollission().sound(SoundType.GRASS));
+    public static Block SAGE = new BushBlock(Block.Properties.of(Material.PLANT).noCollission().sound(SoundType.GRASS));
+    public static Block YARROW = new BushBlock(Block.Properties.of(Material.PLANT).noCollission().sound(SoundType.GRASS));
     public static Block SWEET_FLAG = new WaterHerbBlock((Block.Properties.of(Material.PLANT).noCollission().sound(SoundType.GRASS).noOcclusion()));
 
     //trees' stuff
