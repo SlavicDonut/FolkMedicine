@@ -21,32 +21,31 @@ import java.util.OptionalInt;
 
 public class ModFeatures {
     public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> LINDEN = register("linden",
-            Feature.TREE.configured((
+            Feature.TREE.withConfiguration((
                     new BaseTreeFeatureConfig.Builder(
-                            new SimpleBlockStateProvider(ModBlocks.LINDEN_LOG.defaultBlockState()),
-                            new SimpleBlockStateProvider(ModBlocks.LINDEN_LEAVES.defaultBlockState()),
-                            new FancyFoliagePlacer(FeatureSpread.fixed(6), FeatureSpread.fixed(6), 6),
+                            new SimpleBlockStateProvider(ModBlocks.LINDEN_LOG.getDefaultState()),
+                            new SimpleBlockStateProvider(ModBlocks.LINDEN_LEAVES.getDefaultState()),
+                            new FancyFoliagePlacer(FeatureSpread.create(6), FeatureSpread.create(6), 6),
                             new FancyTrunkPlacer(11, 11, 11),
-                            new TwoLayerFeature(0, 0, 0, OptionalInt.of(4)))).ignoreVines().heightmap(Heightmap.Type.MOTION_BLOCKING).build()));
+                            new TwoLayerFeature(0, 0, 0, OptionalInt.of(4)))).setIgnoreVines().setHeightmap(Heightmap.Type.MOTION_BLOCKING).build()));
 
     public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> JUNIPER =
-            register("juniper", Feature.TREE.configured((
+            register("juniper", Feature.TREE.withConfiguration((
                     new BaseTreeFeatureConfig.Builder(
-                            new SimpleBlockStateProvider(ModBlocks.JUNIPER_LOG.defaultBlockState()),
-                            new SimpleBlockStateProvider(ModBlocks.JUNIPER_LEAVES.defaultBlockState()),
-                            new SpruceFoliagePlacer(FeatureSpread.of(4, 4), FeatureSpread.of(1, 1), FeatureSpread.of(1, 1)),
-                            new StraightTrunkPlacer(5, 2, 1), new TwoLayerFeature(2, 0, 2))).ignoreVines().build()));
+                            new SimpleBlockStateProvider(ModBlocks.JUNIPER_LOG.getDefaultState()),
+                            new SimpleBlockStateProvider(ModBlocks.JUNIPER_LEAVES.getDefaultState()),
+                            new SpruceFoliagePlacer(FeatureSpread.create(4, 4), FeatureSpread.create(1, 1), FeatureSpread.create(1, 1)),
+                            new StraightTrunkPlacer(5, 2, 1), new TwoLayerFeature(2, 0, 2))).setIgnoreVines().build()));
 
 
     public static final ConfiguredFeature<BaseTreeFeatureConfig, ?> SANDALWOOD =
-            register("sandalwood", Feature.TREE.configured((
+            register("sandalwood", Feature.TREE.withConfiguration((
                     new BaseTreeFeatureConfig.Builder(
-                            new SimpleBlockStateProvider(ModBlocks.SANDALWOOD_LOG.defaultBlockState()),
-                            new SimpleBlockStateProvider(ModBlocks.SANDALWOOD_LEAVES.defaultBlockState()),
-                            new BlobFoliagePlacer(FeatureSpread.fixed(2), FeatureSpread.fixed(0), 3),
+                            new SimpleBlockStateProvider(ModBlocks.SANDALWOOD_LOG.getDefaultState()),
+                            new SimpleBlockStateProvider(ModBlocks.SANDALWOOD_LEAVES.getDefaultState()),
+                            new BlobFoliagePlacer(FeatureSpread.create(2), FeatureSpread.create(0), 3),
                             new StraightTrunkPlacer(4, 2, 0),
-                            new TwoLayerFeature(1, 0, 1))).ignoreVines().build()));
-
+                            new TwoLayerFeature(1, 0, 1))).setIgnoreVines().build()));
 
     private static <FC extends IFeatureConfig> ConfiguredFeature<FC, ?> register(String p_243968_0_, ConfiguredFeature<FC, ?> p_243968_1_) {
         return Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, p_243968_0_, p_243968_1_);

@@ -20,17 +20,17 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.stream.Collectors;
 
-import static net.minecraft.item.ItemGroup.TABS;
+import static net.minecraft.item.ItemGroup.GROUPS;
 
 @Mod(FolkMedicine.MOD_ID)
 public class FolkMedicine
 {
-    public static final ItemGroup FOLK_MEDICINE = (new ItemGroup(TABS.length, "folkmedicine") {
-    @Override
-    public ItemStack makeIcon() {
+    public static final ItemGroup FOLK_MEDICINE = (new ItemGroup(GROUPS.length, "folkmedicine") {
+        @Override
+    public ItemStack createIcon() {
         return new ItemStack(Blocks.FERN);
     }
-}).setRecipeFolderName("folk_medicine");
+}).setGroupPath("folk_medicine");
     public static final String MOD_ID = "folkmedicine";
     private static final Logger LOGGER = LogManager.getLogger();
 
@@ -57,7 +57,7 @@ public class FolkMedicine
 
     private void doClientStuff(final FMLClientSetupEvent event) {
         // do something that can only be done on the client
-        LOGGER.info("Got game settings {}", event.getMinecraftSupplier().get().options);
+        LOGGER.info("Got game settings {}", event.getMinecraftSupplier().get().gameSettings);
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event)

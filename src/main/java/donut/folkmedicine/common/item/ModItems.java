@@ -14,45 +14,45 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class ModItems {
 
     //trees' stuff
-    public static BlockItem linden_sapling = new BlockItem(ModBlocks.LINDEN_SAPLING, new Item.Properties().tab(FolkMedicine.FOLK_MEDICINE));
-    public static BlockItem juniper_sapling = new BlockItem(ModBlocks.JUNIPER_SAPLING, new Item.Properties().tab(FolkMedicine.FOLK_MEDICINE));
-    public static BlockItem sandalwood_sapling = new BlockItem(ModBlocks.SANDALWOOD_SAPLING, new Item.Properties().tab(FolkMedicine.FOLK_MEDICINE));
+    public static BlockItem linden_sapling = new BlockItem(ModBlocks.LINDEN_SAPLING, new Item.Properties().group(FolkMedicine.FOLK_MEDICINE));
+    public static BlockItem juniper_sapling = new BlockItem(ModBlocks.JUNIPER_SAPLING, new Item.Properties().group(FolkMedicine.FOLK_MEDICINE));
+    public static BlockItem sandalwood_sapling = new BlockItem(ModBlocks.SANDALWOOD_SAPLING, new Item.Properties().group(FolkMedicine.FOLK_MEDICINE));
 
-    public static BlockItem linden_leaves = new BlockItem(ModBlocks.LINDEN_LEAVES, new Item.Properties().tab(FolkMedicine.FOLK_MEDICINE));
-    public static BlockItem juniper_leaves = new BlockItem(ModBlocks.JUNIPER_LEAVES, new Item.Properties().tab(FolkMedicine.FOLK_MEDICINE));
-    public static BlockItem sandalwood_leaves = new BlockItem(ModBlocks.SANDALWOOD_LEAVES, new Item.Properties().tab(FolkMedicine.FOLK_MEDICINE));
+    public static BlockItem linden_leaves = new BlockItem(ModBlocks.LINDEN_LEAVES, new Item.Properties().group(FolkMedicine.FOLK_MEDICINE));
+    public static BlockItem juniper_leaves = new BlockItem(ModBlocks.JUNIPER_LEAVES, new Item.Properties().group(FolkMedicine.FOLK_MEDICINE));
+    public static BlockItem sandalwood_leaves = new BlockItem(ModBlocks.SANDALWOOD_LEAVES, new Item.Properties().group(FolkMedicine.FOLK_MEDICINE));
 
-    public static BlockItem linden_log = new BlockItem(ModBlocks.LINDEN_LOG, new Item.Properties().tab(FolkMedicine.FOLK_MEDICINE));
-    public static BlockItem juniper_log = new BlockItem(ModBlocks.JUNIPER_LOG, new Item.Properties().tab(FolkMedicine.FOLK_MEDICINE));
-    public static BlockItem sandalwood_log = new BlockItem(ModBlocks.SANDALWOOD_LOG, new Item.Properties().tab(FolkMedicine.FOLK_MEDICINE));
+    public static BlockItem linden_log = new BlockItem(ModBlocks.LINDEN_LOG, new Item.Properties().group(FolkMedicine.FOLK_MEDICINE));
+    public static BlockItem juniper_log = new BlockItem(ModBlocks.JUNIPER_LOG, new Item.Properties().group(FolkMedicine.FOLK_MEDICINE));
+    public static BlockItem sandalwood_log = new BlockItem(ModBlocks.SANDALWOOD_LOG, new Item.Properties().group(FolkMedicine.FOLK_MEDICINE));
 
-    public static BlockItem stripped_linden_log = new BlockItem(ModBlocks.STRIPPED_LINDEN_LOG, new Item.Properties().tab(FolkMedicine.FOLK_MEDICINE));
-    public static BlockItem stripped_juniper_log = new BlockItem(ModBlocks.STRIPPED_JUNIPER_LOG, new Item.Properties().tab(FolkMedicine.FOLK_MEDICINE));
-    public static BlockItem stripped_sandalwood_log = new BlockItem(ModBlocks.STRIPPED_SANDALWOOD_LOG, new Item.Properties().tab(FolkMedicine.FOLK_MEDICINE));
+    public static BlockItem stripped_linden_log = new BlockItem(ModBlocks.STRIPPED_LINDEN_LOG, new Item.Properties().group(FolkMedicine.FOLK_MEDICINE));
+    public static BlockItem stripped_juniper_log = new BlockItem(ModBlocks.STRIPPED_JUNIPER_LOG, new Item.Properties().group(FolkMedicine.FOLK_MEDICINE));
+    public static BlockItem stripped_sandalwood_log = new BlockItem(ModBlocks.STRIPPED_SANDALWOOD_LOG, new Item.Properties().group(FolkMedicine.FOLK_MEDICINE));
 
-    public static BlockItem linden_planks = new BlockItem(ModBlocks.LINDEN_PLANKS, new Item.Properties().tab(FolkMedicine.FOLK_MEDICINE));
-    public static BlockItem juniper_planks = new BlockItem(ModBlocks.JUNIPER_PLANKS, new Item.Properties().tab(FolkMedicine.FOLK_MEDICINE));
-    public static BlockItem sandalwood_planks = new BlockItem(ModBlocks.SANDALWOOD_PLANKS, new Item.Properties().tab(FolkMedicine.FOLK_MEDICINE));
+    public static BlockItem linden_planks = new BlockItem(ModBlocks.LINDEN_PLANKS, new Item.Properties().group(FolkMedicine.FOLK_MEDICINE));
+    public static BlockItem juniper_planks = new BlockItem(ModBlocks.JUNIPER_PLANKS, new Item.Properties().group(FolkMedicine.FOLK_MEDICINE));
+    public static BlockItem sandalwood_planks = new BlockItem(ModBlocks.SANDALWOOD_PLANKS, new Item.Properties().group(FolkMedicine.FOLK_MEDICINE));
 
     //ingredients
-    public static Item chamomile_petals = new Item(new Item.Properties().tab(FolkMedicine.FOLK_MEDICINE));
-    public static Item nettle_leaves = new Item(new Item.Properties().tab(FolkMedicine.FOLK_MEDICINE));
-    public static Item ribleaf_leaves = new Item(new Item.Properties().tab(FolkMedicine.FOLK_MEDICINE));
-    public static Item sage_leaves = new Item(new Item.Properties().tab(FolkMedicine.FOLK_MEDICINE));
-    public static Item yarrow_petals = new Item(new Item.Properties().tab(FolkMedicine.FOLK_MEDICINE));
-    public static Item sweetflag_rhizomes = new Item(new Item.Properties().tab(FolkMedicine.FOLK_MEDICINE));
+    public static Item chamomile_petals = new Item(new Item.Properties().group(FolkMedicine.FOLK_MEDICINE));
+    public static Item nettle_leaves = new Item(new Item.Properties().group(FolkMedicine.FOLK_MEDICINE));
+    public static Item ribleaf_leaves = new Item(new Item.Properties().group(FolkMedicine.FOLK_MEDICINE));
+    public static Item sage_leaves = new Item(new Item.Properties().group(FolkMedicine.FOLK_MEDICINE));
+    public static Item yarrow_petals = new Item(new Item.Properties().group(FolkMedicine.FOLK_MEDICINE));
+    public static Item sweetflag_rhizomes = new Item(new Item.Properties().group(FolkMedicine.FOLK_MEDICINE));
 
-    public static Item linden_petals = new Item(new Item.Properties().tab(FolkMedicine.FOLK_MEDICINE));
-    public static Item juniper_berries = new Item(new Item.Properties().tab(FolkMedicine.FOLK_MEDICINE));
-    public static Item sandalwood_resin = new Item(new Item.Properties().tab(FolkMedicine.FOLK_MEDICINE));
+    public static Item linden_petals = new Item(new Item.Properties().group(FolkMedicine.FOLK_MEDICINE));
+    public static Item juniper_berries = new Item(new Item.Properties().group(FolkMedicine.FOLK_MEDICINE));
+    public static Item sandalwood_resin = new Item(new Item.Properties().group(FolkMedicine.FOLK_MEDICINE));
 
     //seeds
-    public static Item chamomile_seeds = new BlockNamedItem(ModBlocks.CHAMOMILE, new Item.Properties().tab(FolkMedicine.FOLK_MEDICINE));
-    public static Item nettle_seeds = new BlockNamedItem(ModBlocks.NETTLE, new Item.Properties().tab(FolkMedicine.FOLK_MEDICINE));
-    public static Item ribleaf_seeds = new BlockNamedItem(ModBlocks.RIBLEAF, new Item.Properties().tab(FolkMedicine.FOLK_MEDICINE));
-    public static Item sage_seeds = new BlockNamedItem(ModBlocks.SAGE, new Item.Properties().tab(FolkMedicine.FOLK_MEDICINE));
-    public static Item yarrow_seeds = new BlockNamedItem(ModBlocks.YARROW, new Item.Properties().tab(FolkMedicine.FOLK_MEDICINE));
-    public static Item sweetflag_seeds = new BlockNamedItem(ModBlocks.SWEET_FLAG, new Item.Properties().tab(FolkMedicine.FOLK_MEDICINE));
+    public static Item chamomile_seeds = new BlockNamedItem(ModBlocks.CHAMOMILE, new Item.Properties().group(FolkMedicine.FOLK_MEDICINE));
+    public static Item nettle_seeds = new BlockNamedItem(ModBlocks.NETTLE, new Item.Properties().group(FolkMedicine.FOLK_MEDICINE));
+    public static Item ribleaf_seeds = new BlockNamedItem(ModBlocks.RIBLEAF, new Item.Properties().group(FolkMedicine.FOLK_MEDICINE));
+    public static Item sage_seeds = new BlockNamedItem(ModBlocks.SAGE, new Item.Properties().group(FolkMedicine.FOLK_MEDICINE));
+    public static Item yarrow_seeds = new BlockNamedItem(ModBlocks.YARROW, new Item.Properties().group(FolkMedicine.FOLK_MEDICINE));
+    public static Item sweetflag_seeds = new BlockNamedItem(ModBlocks.SWEET_FLAG, new Item.Properties().group(FolkMedicine.FOLK_MEDICINE));
 
 
     @SubscribeEvent

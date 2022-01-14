@@ -10,8 +10,8 @@ import net.minecraft.util.Direction;
 public class HerbLogBlock extends RotatedPillarBlock {
 
     public HerbLogBlock(MaterialColor color1, MaterialColor color2) {
-        super(AbstractBlock.Properties.of(Material.WOOD, (x) -> {
-            return x.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? color1 : color2;
-        }).strength(2.0F).sound(SoundType.WOOD));
+        super(AbstractBlock.Properties.create(Material.WOOD, (state) -> {
+            return state.get(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? color1 : color2;
+        }).hardnessAndResistance(2.0F).sound(SoundType.WOOD));
     }
 }

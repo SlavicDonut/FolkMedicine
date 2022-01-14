@@ -18,7 +18,8 @@ import net.minecraft.world.server.ServerWorld;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public class WaterHerbBlock extends BushBlock implements IGrowable, ILiquidContainer, net.minecraftforge.common.IForgeShearable {
+public class WaterHerbBlock {
+    /*
     protected static final VoxelShape SHAPE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 12.0D, 14.0D);
 
 
@@ -76,7 +77,7 @@ public class WaterHerbBlock extends BushBlock implements IGrowable, ILiquidConta
         return blockstate;
     }
 
-    /*
+
     @Override
     protected boolean mayPlaceOn(BlockState state, IBlockReader world, BlockPos pos) {
         FluidState fluidState = world.getFluidState(pos.above());

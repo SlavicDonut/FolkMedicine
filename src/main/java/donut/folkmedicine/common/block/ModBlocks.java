@@ -23,33 +23,33 @@ import net.minecraftforge.registries.ForgeRegistries;
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModBlocks {
     //herbs
-    public static Block CHAMOMILE = new HerbBlock(Block.Properties.of(Material.PLANT).noCollission().sound(SoundType.GRASS), () -> ModItems.chamomile_petals);
-    public static Block NETTLE = new BushBlock(Block.Properties.of(Material.PLANT).noCollission().sound(SoundType.GRASS));
-    public static Block RIBLEAF = new BushBlock(Block.Properties.of(Material.PLANT).noCollission().sound(SoundType.GRASS));
-    public static Block SAGE = new BushBlock(Block.Properties.of(Material.PLANT).noCollission().sound(SoundType.GRASS));
-    public static Block YARROW = new BushBlock(Block.Properties.of(Material.PLANT).noCollission().sound(SoundType.GRASS));
-    public static Block SWEET_FLAG = new WaterHerbBlock((Block.Properties.of(Material.PLANT).noCollission().sound(SoundType.GRASS).noOcclusion()));
+    public static Block CHAMOMILE = new HerbBlock(Block.Properties.create(Material.PLANTS).doesNotBlockMovement().sound(SoundType.PLANT), () -> ModItems.chamomile_petals);
+    public static Block NETTLE = new BushBlock(Block.Properties.create(Material.PLANTS).doesNotBlockMovement().sound(SoundType.PLANT));
+    public static Block RIBLEAF = new BushBlock(Block.Properties.create(Material.PLANTS).doesNotBlockMovement().sound(SoundType.PLANT));
+    public static Block SAGE = new BushBlock(Block.Properties.create(Material.PLANTS).doesNotBlockMovement().sound(SoundType.PLANT));
+    public static Block YARROW = new BushBlock(Block.Properties.create(Material.PLANTS).doesNotBlockMovement().sound(SoundType.PLANT));
+    public static Block SWEET_FLAG = new BushBlock((Block.Properties.create(Material.PLANTS).doesNotBlockMovement().sound(SoundType.WET_GRASS)));
 
     //trees' stuff
-    public static Block LINDEN_SAPLING = new SaplingBlock(new LindenTree(), AbstractBlock.Properties.copy(Blocks.OAK_SAPLING));
-    public static Block JUNIPER_SAPLING = new SaplingBlock(new JuniperTree(), AbstractBlock.Properties.copy(Blocks.OAK_SAPLING));
-    public static Block SANDALWOOD_SAPLING = new SaplingBlock(new SandalwoodTree(), AbstractBlock.Properties.copy(Blocks.OAK_SAPLING));
+    public static Block LINDEN_SAPLING = new SaplingBlock(new LindenTree(), AbstractBlock.Properties.from(Blocks.OAK_SAPLING));
+    public static Block JUNIPER_SAPLING = new SaplingBlock(new JuniperTree(), AbstractBlock.Properties.from(Blocks.OAK_SAPLING));
+    public static Block SANDALWOOD_SAPLING = new SaplingBlock(new SandalwoodTree(), AbstractBlock.Properties.from(Blocks.OAK_SAPLING));
 
     public static Block LINDEN_LEAVES = leaves();
     public static Block SANDALWOOD_LEAVES = leaves();
     public static Block JUNIPER_LEAVES = leaves();
 
-    public static Block LINDEN_LOG = new HerbLogBlock(MaterialColor.WOOD, MaterialColor.COLOR_GRAY);
-    public static Block SANDALWOOD_LOG = new HerbLogBlock(MaterialColor.WOOD, MaterialColor.COLOR_ORANGE);
-    public static Block JUNIPER_LOG = new HerbLogBlock(MaterialColor.WOOD, MaterialColor.COLOR_BROWN);
+    public static Block LINDEN_LOG = new HerbLogBlock(MaterialColor.WOOD, MaterialColor.GRAY);
+    public static Block SANDALWOOD_LOG = new HerbLogBlock(MaterialColor.WOOD, MaterialColor.ORANGE_TERRACOTTA);
+    public static Block JUNIPER_LOG = new HerbLogBlock(MaterialColor.WOOD, MaterialColor.BROWN);
 
-    public static Block STRIPPED_LINDEN_LOG = new HerbLogBlock(MaterialColor.WOOD, MaterialColor.COLOR_GRAY);
-    public static Block STRIPPED_SANDALWOOD_LOG = new HerbLogBlock(MaterialColor.WOOD, MaterialColor.COLOR_ORANGE);
-    public static Block STRIPPED_JUNIPER_LOG = new HerbLogBlock(MaterialColor.WOOD, MaterialColor.COLOR_BROWN);
+    public static Block STRIPPED_LINDEN_LOG = new HerbLogBlock(MaterialColor.WOOD, MaterialColor.GRAY);
+    public static Block STRIPPED_SANDALWOOD_LOG = new HerbLogBlock(MaterialColor.WOOD, MaterialColor.ORANGE_TERRACOTTA);
+    public static Block STRIPPED_JUNIPER_LOG = new HerbLogBlock(MaterialColor.WOOD, MaterialColor.BROWN);
 
-    public static Block LINDEN_PLANKS = new Block(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.COLOR_GRAY).strength(2.0F, 3.0F).sound(SoundType.WOOD));
-    public static Block SANDALWOOD_PLANKS = new Block(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.COLOR_ORANGE).strength(2.0F, 3.0F).sound(SoundType.WOOD));
-    public static Block JUNIPER_PLANKS = new Block(AbstractBlock.Properties.of(Material.WOOD, MaterialColor.COLOR_BROWN).strength(2.0F, 3.0F).sound(SoundType.WOOD));
+    public static Block LINDEN_PLANKS = new Block(AbstractBlock.Properties.create(Material.WOOD, MaterialColor.GRAY).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD));
+    public static Block SANDALWOOD_PLANKS = new Block(AbstractBlock.Properties.create(Material.WOOD, MaterialColor.ORANGE_TERRACOTTA).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD));
+    public static Block JUNIPER_PLANKS = new Block(AbstractBlock.Properties.create(Material.WOOD, MaterialColor.BROWN).hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD));
 
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event) {
@@ -84,7 +84,7 @@ public class ModBlocks {
         registerBlock(SANDALWOOD_PLANKS, "sandalwood_planks");
 
         if (FMLEnvironment.dist == Dist.CLIENT) {
-            RenderType transparentRender = RenderType.cutoutMipped();
+            RenderType transparentRender = RenderType.getCutoutMipped();
 
             RenderTypeLookup.setRenderLayer(CHAMOMILE, transparentRender);
             RenderTypeLookup.setRenderLayer(NETTLE, transparentRender);
@@ -114,7 +114,7 @@ public class ModBlocks {
     }
 
     private static LeavesBlock leaves() {
-        return new LeavesBlock(AbstractBlock.Properties.of(Material.LEAVES).strength(0.2F).randomTicks().sound(SoundType.GRASS).noOcclusion().isSuffocating(ModBlocks::never).isViewBlocking(ModBlocks::never));
+        return new LeavesBlock(AbstractBlock.Properties.create(Material.LEAVES).hardnessAndResistance(0.2F).tickRandomly().sound(SoundType.PLANT).notSolid().setSuffocates(ModBlocks::never).setBlocksVision(ModBlocks::never));
     }
 
 }
