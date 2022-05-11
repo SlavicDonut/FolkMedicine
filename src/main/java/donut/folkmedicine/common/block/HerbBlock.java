@@ -25,6 +25,7 @@ public class HerbBlock extends SweetBerryBushBlock {
         drop = item;
     }
 
+
     @Override
     public ItemStack getItem(IBlockReader worldIn, BlockPos pos, BlockState state) {
         return new ItemStack(drop.get());
