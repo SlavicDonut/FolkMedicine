@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "folkmedicine:linden_wall_sign",
+    "folkmedicine:juniper_wall_sign",
+    "folkmedicine:sandalwood_wall_sign"
+  ]
+}

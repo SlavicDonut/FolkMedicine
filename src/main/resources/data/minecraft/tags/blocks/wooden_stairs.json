@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "folkmedicine:linden_stairs",
+    "folkmedicine:juniper_stairs",
+    "folkmedicine:sandalwood_stairs"
+  ]
+}

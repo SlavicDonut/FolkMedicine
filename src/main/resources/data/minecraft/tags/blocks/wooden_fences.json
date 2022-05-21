@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "folkmedicine:linden_fence",
+    "folkmedicine:juniper_fence",
+    "folkmedicine:sandalwood_fence"
+  ]
+}

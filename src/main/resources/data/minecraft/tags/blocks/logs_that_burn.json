@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "#minecraft:linden_logs",
+    "#minecraft:juniper_logs",
+    "#minecraft:sandalwood_logs"
+  ]
+}

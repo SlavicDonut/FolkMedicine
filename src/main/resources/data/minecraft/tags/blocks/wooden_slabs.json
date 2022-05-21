@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "folkmedicine:linden_slab",
+    "folkmedicine:juniper_slab",
+    "folkmedicine:sandalwood_slab"
+  ]
+}

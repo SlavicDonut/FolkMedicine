@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "folkmedicine:linden_sapling",
+    "folkmedicine:juniper_sapling",
+    "folkmedicine:sandalwood_sapling"
+  ]
+}
