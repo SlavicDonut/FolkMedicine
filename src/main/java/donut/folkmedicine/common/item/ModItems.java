@@ -5,6 +5,7 @@ import donut.folkmedicine.common.block.ModBlocks;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.BlockNamedItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.SignItem;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -75,9 +76,9 @@ public class ModItems {
     public static RegistryObject<Item> juniper_door = ITEMS.register("juniper_door", () -> new BlockItem(ModBlocks.JUNIPER_DOOR.get(), new Item.Properties().group(FolkMedicine.FOLK_MEDICINE)));
     public static RegistryObject<Item> sandalwood_door = ITEMS.register("sandalwood_door", () -> new BlockItem(ModBlocks.SANDALWOOD_DOOR.get(), new Item.Properties().group(FolkMedicine.FOLK_MEDICINE)));
 
-    public static RegistryObject<Item> linden_sign = ITEMS.register("linden_sign", () -> new BlockItem(ModBlocks.LINDEN_SIGN.get(), new Item.Properties().group(FolkMedicine.FOLK_MEDICINE)));
-    public static RegistryObject<Item> juniper_sign = ITEMS.register("juniper_sign", () -> new BlockItem(ModBlocks.JUNIPER_SIGN.get(), new Item.Properties().group(FolkMedicine.FOLK_MEDICINE)));
-    public static RegistryObject<Item> sandalwood_sign = ITEMS.register("sandalwood_sign", () -> new BlockItem(ModBlocks.SANDALWOOD_SIGN.get(), new Item.Properties().group(FolkMedicine.FOLK_MEDICINE)));
+    public static RegistryObject<Item> linden_sign = ITEMS.register("linden_sign", () -> new SignItem(new Item.Properties().group(FolkMedicine.FOLK_MEDICINE), ModBlocks.LINDEN_SIGN.get(), ModBlocks.LINDEN_WALL_SIGN.get()));
+    public static RegistryObject<Item> juniper_sign = ITEMS.register("juniper_sign", () -> new SignItem(new Item.Properties().group(FolkMedicine.FOLK_MEDICINE), ModBlocks.JUNIPER_SIGN.get(), ModBlocks.JUNIPER_WALL_SIGN.get()));
+    public static RegistryObject<Item> sandalwood_sign = ITEMS.register("sandalwood_sign", () -> new SignItem(new Item.Properties().group(FolkMedicine.FOLK_MEDICINE), ModBlocks.SANDALWOOD_SIGN.get(), ModBlocks.SANDALWOOD_WALL_SIGN.get()));
 
     //ingredients
     public static RegistryObject<Item> chamomile_petals = ITEMS.register("chamomile_petals", () -> new Item(new Item.Properties().group(FolkMedicine.FOLK_MEDICINE)));
