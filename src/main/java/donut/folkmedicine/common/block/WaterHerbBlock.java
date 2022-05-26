@@ -29,7 +29,7 @@ public class WaterHerbBlock extends SeaGrassBlock {
     }
 
     public void grow(ServerWorld worldIn, Random rand, BlockPos pos, BlockState state) {
-        BlockState blockstate = ModBlocks.TALL_SWEETFLAG.getDefaultState();
+        BlockState blockstate = ModBlocks.TALL_SWEETFLAG.get().getDefaultState();
         BlockState blockstate1 = blockstate.with(TallSeaGrassBlock.HALF, DoubleBlockHalf.UPPER);
         BlockPos blockpos = pos.up();
         if (worldIn.getBlockState(blockpos).matchesBlock(Blocks.AIR)) {
