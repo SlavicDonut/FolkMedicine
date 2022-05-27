@@ -1,13 +1,13 @@
 package donut.folkmedicine;
 
-import donut.folkmedicine.common.block.ModBlocks;
+import donut.folkmedicine.client.render.RenderManager;
+import donut.folkmedicine.common.block.FolkMedicineWoodTypes;
+import donut.folkmedicine.common.tileentity.FolkMedicineEntityTypes;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.RenderTypeLookup;
+import net.minecraft.client.renderer.Atlases;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -19,7 +19,6 @@ import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.fml.loading.FMLEnvironment;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -45,6 +44,7 @@ public class FolkMedicine
     public FolkMedicine() {
         BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
         ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
+        FolkMedicineEntityTypes.TILE_ENTITY_TYPES.register(FMLJavaModLoadingContext.get().getModEventBus());
 
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
@@ -67,20 +67,10 @@ public class FolkMedicine
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
-        if (FMLEnvironment.dist == Dist.CLIENT) {
-            RenderType transparentRenderType = RenderType.getCutoutMipped();
-            RenderTypeLookup.setRenderLayer(ModBlocks.LINDEN_LEAVES.get(), transparentRenderType);
-            RenderTypeLookup.setRenderLayer(ModBlocks.JUNIPER_LEAVES.get(), transparentRenderType);
-            RenderTypeLookup.setRenderLayer(ModBlocks.SANDALWOOD_LEAVES.get(), transparentRenderType);
-
-            RenderTypeLookup.setRenderLayer(ModBlocks.CHAMOMILE.get(), transparentRenderType);
-            RenderTypeLookup.setRenderLayer(ModBlocks.NETTLE.get(), transparentRenderType);
-            RenderTypeLookup.setRenderLayer(ModBlocks.RIBLEAF.get(), transparentRenderType);
-            RenderTypeLookup.setRenderLayer(ModBlocks.SAGE.get(), transparentRenderType);
-            RenderTypeLookup.setRenderLayer(ModBlocks.YARROW.get(), transparentRenderType);
-            RenderTypeLookup.setRenderLayer(ModBlocks.SWEETFLAG.get(), transparentRenderType);
-
-        }
+        RenderManager.registerRenderers();
+        event.enqueueWork(() -> {
+            FolkMedicineWoodTypes.WOOD_TYPES.forEach(Atlases::addWoodType);
+        });
         LOGGER.info("Got game settings {}", event.getMinecraftSupplier().get().gameSettings);
     }
 

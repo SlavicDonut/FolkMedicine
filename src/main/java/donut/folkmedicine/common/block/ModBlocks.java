@@ -87,13 +87,11 @@ public class ModBlocks {
     public static final RegistryObject<Block> JUNIPER_DOOR = BLOCKS.register("juniper_door", () -> new DoorBlock(AbstractBlock.Properties.from(Blocks.OAK_DOOR)));
     public static final RegistryObject<Block> SANDALWOOD_DOOR = BLOCKS.register("sandalwood_door", () -> new DoorBlock(AbstractBlock.Properties.from(Blocks.OAK_DOOR)));
 
-    public static final RegistryObject<Block> LINDEN_SIGN = BLOCKS.register("linden_sign", () -> new StandingSignBlock(AbstractBlock.Properties.from(Blocks.OAK_SIGN), WoodType.OAK));
-    public static final RegistryObject<Block> JUNIPER_SIGN = BLOCKS.register("juniper_sign", () -> new StandingSignBlock(AbstractBlock.Properties.from(Blocks.OAK_SIGN), WoodType.OAK));
-    public static final RegistryObject<Block> SANDALWOOD_SIGN = BLOCKS.register("sandalwood_sign", () -> new StandingSignBlock(AbstractBlock.Properties.from(Blocks.OAK_SIGN), WoodType.OAK));
+    public static final RegistryObject<Block> LINDEN_SIGN = BLOCKS.register("linden_sign", () -> new FolkMedicineStandingSignBlock(AbstractBlock.Properties.from(Blocks.OAK_SIGN), FolkMedicineWoodTypes.LINDEN));
+    public static final RegistryObject<Block> JUNIPER_SIGN = BLOCKS.register("juniper_sign", () -> new FolkMedicineStandingSignBlock(AbstractBlock.Properties.from(Blocks.OAK_SIGN), FolkMedicineWoodTypes.JUNIPER));
+    public static final RegistryObject<Block> SANDALWOOD_SIGN = BLOCKS.register("sandalwood_sign", () -> new FolkMedicineStandingSignBlock(AbstractBlock.Properties.from(Blocks.OAK_SIGN), FolkMedicineWoodTypes.SANDALWOOD));
 
-    //tu też przerobić na drugi konstruktor
-    public static final RegistryObject<Block> LINDEN_WALL_SIGN = BLOCKS.register("linden_wall_sign", () -> new WallSignBlock(AbstractBlock.Properties.from(Blocks.OAK_SIGN), WoodType.OAK));
-    public static final RegistryObject<Block> JUNIPER_WALL_SIGN = BLOCKS.register("juniper_wall_sign", () -> new WallSignBlock(AbstractBlock.Properties.from(Blocks.OAK_SIGN), WoodType.SPRUCE));
-    public static final RegistryObject<Block> SANDALWOOD_WALL_SIGN = BLOCKS.register("sandalwood_wall_sign", () -> new WallSignBlock(AbstractBlock.Properties.from(Blocks.OAK_SIGN), WoodType.ACACIA));
-
+    public static final RegistryObject<Block> LINDEN_WALL_SIGN = BLOCKS.register("linden_wall_sign", () -> new FolkMedicineWallSignBlock(AbstractBlock.Properties.from(Blocks.OAK_SIGN), FolkMedicineWoodTypes.LINDEN));
+    public static final RegistryObject<Block> JUNIPER_WALL_SIGN = BLOCKS.register("juniper_wall_sign", () -> new FolkMedicineWallSignBlock(AbstractBlock.Properties.from(Blocks.OAK_SIGN), FolkMedicineWoodTypes.JUNIPER));
+    public static final RegistryObject<Block> SANDALWOOD_WALL_SIGN = BLOCKS.register("sandalwood_wall_sign", () -> new FolkMedicineWallSignBlock(AbstractBlock.Properties.from(Blocks.OAK_SIGN), FolkMedicineWoodTypes.SANDALWOOD));
 }
