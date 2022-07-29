@@ -17,11 +17,11 @@ public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MOD_ID);
 
     //herbs
-    public static final RegistryObject<Block> CHAMOMILE = BLOCKS.register("chamomile", () -> new HerbBlock(Block.Properties.create(Material.PLANTS).doesNotBlockMovement().sound(SoundType.PLANT), () -> ModItems.chamomile_petals.get()));
-    public static final RegistryObject<Block> NETTLE = BLOCKS.register("nettle", () -> new BushBlock(Block.Properties.create(Material.PLANTS).doesNotBlockMovement().sound(SoundType.PLANT)));
-    public static final RegistryObject<Block> RIBLEAF = BLOCKS.register("ribleaf", () -> new BushBlock(Block.Properties.create(Material.PLANTS).doesNotBlockMovement().sound(SoundType.PLANT)));
-    public static final RegistryObject<Block> SAGE = BLOCKS.register("sage", () -> new BushBlock(Block.Properties.create(Material.PLANTS).doesNotBlockMovement().sound(SoundType.PLANT)));
-    public static final RegistryObject<Block> YARROW = BLOCKS.register("yarrow", () -> new BushBlock(Block.Properties.create(Material.PLANTS).doesNotBlockMovement().sound(SoundType.PLANT)));
+    public static final RegistryObject<Block> CHAMOMILE = BLOCKS.register("chamomile", () -> new HerbBlock(Block.Properties.create(Material.PLANTS).doesNotBlockMovement().sound(SoundType.PLANT), () -> ModItems.chamomile_petals.get(), () -> ModItems.chamomile_seeds.get()));
+    public static final RegistryObject<Block> NETTLE = BLOCKS.register("nettle", () -> new HerbBlock(Block.Properties.create(Material.PLANTS).doesNotBlockMovement().sound(SoundType.PLANT), () -> ModItems.nettle_leaves.get(), () -> ModItems.nettle_seeds.get()));
+    public static final RegistryObject<Block> RIBLEAF = BLOCKS.register("ribleaf", () -> new HerbBlock(Block.Properties.create(Material.PLANTS).doesNotBlockMovement().sound(SoundType.PLANT), () -> ModItems.ribleaf_leaves.get(), () -> ModItems.ribleaf_seeds.get()));
+    public static final RegistryObject<Block> SAGE = BLOCKS.register("sage", () -> new HerbBlock(Block.Properties.create(Material.PLANTS).doesNotBlockMovement().sound(SoundType.PLANT), () -> ModItems.sage_leaves.get(), () -> ModItems.sage_seeds.get()));
+    public static final RegistryObject<Block> YARROW = BLOCKS.register("yarrow", () -> new HerbBlock(Block.Properties.create(Material.PLANTS).doesNotBlockMovement().sound(SoundType.PLANT), () -> ModItems.yarrow_petals.get(), () -> ModItems.yarrow_seeds.get()));
     public static final RegistryObject<Block> SWEETFLAG = BLOCKS.register("sweetflag", () -> new WaterHerbBlock((Block.Properties.create(Material.PLANTS).doesNotBlockMovement().sound(SoundType.WET_GRASS))));
     public static final RegistryObject<Block> TALL_SWEETFLAG = BLOCKS.register("tall_sweetflag", () -> new TallWaterHerbBlock(AbstractBlock.Properties.create(Material.SEA_GRASS).doesNotBlockMovement().zeroHardnessAndResistance().sound(SoundType.WET_GRASS)));
 
@@ -74,7 +74,6 @@ public class ModBlocks {
     public static final RegistryObject<Block> JUNIPER_FENCE_GATE = BLOCKS.register("juniper_fence_gate", () -> new FenceGateBlock(AbstractBlock.Properties.from(Blocks.OAK_FENCE_GATE)));
     public static final RegistryObject<Block> SANDALWOOD_FENCE_GATE = BLOCKS.register("sandalwood_fence_gate", () -> new FenceGateBlock(AbstractBlock.Properties.from(Blocks.OAK_FENCE_GATE)));
 
-    //przerobić na używanie drugiego konstruktora (takiego z supplierem)
     public static final RegistryObject<Block> LINDEN_STAIRS = BLOCKS.register("linden_stairs", () -> new StairsBlock(Blocks.OAK_PLANKS::getDefaultState, AbstractBlock.Properties.from(Blocks.OAK_STAIRS)));
     public static final RegistryObject<Block> JUNIPER_STAIRS = BLOCKS.register("juniper_stairs", () -> new StairsBlock(Blocks.OAK_PLANKS::getDefaultState, AbstractBlock.Properties.from(Blocks.OAK_STAIRS)));
     public static final RegistryObject<Block> SANDALWOOD_STAIRS = BLOCKS.register("sandalwood_stairs", () -> new StairsBlock(Blocks.OAK_PLANKS::getDefaultState, AbstractBlock.Properties.from(Blocks.OAK_STAIRS)));
